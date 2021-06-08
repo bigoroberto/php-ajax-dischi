@@ -1,0 +1,50 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1E2D3B;
+  color: white;
+}
+
+header{
+  height: 70px;
+  background-color: #2E3A46;
+  line-height: 70px;
+}
+
+header img{
+  width: 50px;
+}
+
+.disc{
+  flex-basis: calc(100% / 5);
+  min-height: 400px;
+}
+
+.disc div{
+    background-color: #2E3A46;
+    height: 100%;
+}
+
+.disc div h5{
+    color: #7D7977;
+}
+
+@media screen and(max-width: 1250px){
+  .disc{
+    flex-basis: calc(100% / 4);
+  }
+}
+@media screen and(max-width: 1000px){
+  .disc{
+    flex-basis: calc(100% / 3);
+  }
+}
+@media screen and(max-width: 800px){
+  .disc{
+    flex-basis: calc(100% / 2);
+  }
+}
+@media screen and(max-width: 400px){
+  .disc{
+    flex-basis: 100%;
+  }
+}
