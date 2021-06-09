@@ -3,7 +3,9 @@ const app = new Vue({
   el : '#app',
 
   data:{
-    arrDischi: [],
+    albums: [],
+    genres: [],
+    genreToSearch: 'all',
   },
 
   created(){
@@ -12,11 +14,17 @@ const app = new Vue({
 
   methods:{
     callAPI(url){
-      axios.get(url)
+      axios.get(url,{
+        params:{
+          genre: this.genreToSearch
+        }
+      })
       .then((resp)=>{
         console.log(resp);
-        this.arrDischi.push(resp.data);
-        console.log(this.arrDischi);
+        this.albums = resp.data.albums;
+        this.genres = resp.data.genres;
+        console.log(this.albums);
+        console.log(this.genres);
       })
       .catch((err)=>{
         console.log(err);

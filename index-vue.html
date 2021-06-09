@@ -10,24 +10,45 @@
   <title>Document</title>
 </head>
 <body>
+
   <div id="app">
+
     <header class="d-flex justify-content-between ps-3 pe-3">
         <div>
-          <!-- <img src="@/assets/img/spotify-logo.png" alt="Spotify"> -->
+          <img src="img/spotify-logo.png" alt="Spotify">
+        </div>
+        <div>
+          <select
+            @change="callAPI"
+            v-model="genreToSearch"
+            class="form-select mt-3">
+              <option value="all">Seleziona un genere</option>
+              <option
+              v-for="genre in genres" 
+              :value="genre">{{genre}}</option>
+          </select>
         </div>
     </header>
+
     <main class="container mt-1">
         <div class="d-flex flex-wrap">
-            <div class="disc p-3 text-center"
-                  v-for="disc in arrDischi[0]">
+
+            <div 
+            class="disc p-3 text-center"
+            v-for="album in albums">
               <div class="p-3">
-                <img class="img-fluid mb-3" :src="disc.poster" :alt="disc.title">
-                <h4>{{disc.title}}</h4>
-                <h5>{{disc.year}}</h5>
+                <img class="img-fluid mb-3"
+                :src="album.poster"
+                :alt="album.title">
+                <h4>{{album.title}}</h4>
+                <h3>{{album.author}}</h3>
+                <h5>{{album.year}}</h5>
               </div>
             </div>
+
         </div>
     </main>
+
   </div>
 
 

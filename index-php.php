@@ -15,17 +15,18 @@
 <body>
 <header class="d-flex justify-content-between ps-3 pe-3">
     <div>
-      <img src="@/assets/img/spotify-logo.png" alt="Spotify">
+      <img src="img/spotify-logo.png" alt="Spotify">
     </div>
 </header>
 <main class="container mt-1">
     <div class="d-flex flex-wrap">
-      <?php foreach($database as $disco):?>
+      <?php foreach($database as $album):?>
         <div class="disc p-3 text-center">
           <div class="p-3">
-            <img class="img-fluid mb-3" src="<?php echo $disco ['poster'] ?>" alt="<?php echo $disco ['title'] ?>">
-            <h4><?php echo $disco ['title'] ?></h4>
-            <h5><?php echo $disco ['year'] ?></h5>
+            <img class="img-fluid mb-3" src="<?php echo $album ['poster'] ?>" alt="<?php echo $album ['title'] ?>">
+            <h4><?php echo $album ['author'] ?></h4>
+            <h4><?php echo $album ['title'] ?></h4>
+            <h5><?php echo $album ['year'] ?></h5>
           </div>
         </div>
       <?php endforeach; ?>
